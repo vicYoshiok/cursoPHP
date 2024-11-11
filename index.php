@@ -1,13 +1,14 @@
 <?php
     # inicializa una nueva sesión de curl: ch = cURL handle
-    const API_url = "https://www.whenisthenextmcufilm.com/api";
-    $ch = curl_init(API_url);
+    const API_URL = "https://www.whenisthenextmcufilm.com/api";
+    //$ch = curl_init(API_url);
     //recibir el resultado del petición sin mostrarla en pantalla
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+   // curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
     //ejecutar una petición
-    $result = curl_exec($ch);
+    $result = file_get_contents(API_URL);
+    //$result = curl_exec($ch);
     $data = json_decode($result,true);
-    curl_close($ch);
+    //curl_close($ch);
     
     //$result = file_get_contents(API_URL);
 ?>
